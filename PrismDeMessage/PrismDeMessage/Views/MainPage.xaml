@@ -2,10 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:behaviors="clr-namespace:PrismDeMessage.Behaviors;assembly=PrismDeMessage"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="PrismDeMessage.Views.MainPage"
              Title="MainPage">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="{Binding Title}" />
+
+  <StackLayout>
+    <Button Text="Scroll to TOP" Command="{Binding ScrollToTopCommand}"/>
+    <ListView x:Name="TestList" ItemsSource="{Binding ListItems}">
+      
+      <ListView.Behaviors>
+        <behaviors:ListViewMethodBehavior />
+      </ListView.Behaviors>
+      
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell Text="{Binding Title}" Detail="{Binding Detail}" />
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
   </StackLayout>
+
 </ContentPage>

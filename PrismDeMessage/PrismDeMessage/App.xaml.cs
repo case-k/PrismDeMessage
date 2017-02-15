@@ -1,4 +1,6 @@
-﻿using Prism.Unity;
+﻿using Microsoft.Practices.Unity;
+using Prism.Events;
+using Prism.Unity;
 using PrismDeMessage.Views;
 
 namespace PrismDeMessage
@@ -11,7 +13,7 @@ namespace PrismDeMessage
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("MainPage?title=Hello%20from%20Xamarin.Forms");
+            NavigationService.NavigateAsync("MainPage");
         }
 
         protected override void RegisterTypes()
