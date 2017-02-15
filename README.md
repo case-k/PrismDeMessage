@@ -1,0 +1,5 @@
+# PrismDeMessage
+ViewModelからコントロールのメソッド呼びたい
+
+ViewModelからListViewのScrollTo()を呼びたかったので色々とやってみたけど  
+無難なメッセージで落ち着いた
